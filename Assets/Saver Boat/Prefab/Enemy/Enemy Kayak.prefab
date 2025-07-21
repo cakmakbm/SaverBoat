@@ -49,6 +49,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bonusType: 1
   bonusAmount: 1
+  searchRadius: 15
+  moveSpeed: 5
+  rotationSpeed: 5
 --- !u!65 &3654518153276957420
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -101,7 +104,7 @@ PrefabInstance:
     - target: {fileID: 8570613672435159821, guid: d481f5b5d960cba4ebe31efb026d40a7,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8570613672435159821, guid: d481f5b5d960cba4ebe31efb026d40a7,
         type: 3}
@@ -111,7 +114,7 @@ PrefabInstance:
     - target: {fileID: 8570613672435159821, guid: d481f5b5d960cba4ebe31efb026d40a7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8570613672435159821, guid: d481f5b5d960cba4ebe31efb026d40a7,
         type: 3}
@@ -126,7 +129,7 @@ PrefabInstance:
     - target: {fileID: 8570613672435159821, guid: d481f5b5d960cba4ebe31efb026d40a7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8570613672435159821, guid: d481f5b5d960cba4ebe31efb026d40a7,
         type: 3}

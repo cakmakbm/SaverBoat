@@ -3,9 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerDetection : MonoBehaviour {
-   [SerializeField] private CrowdSystem crowdSystem;
-   
+public class PlayerDetection : MonoBehaviour { 
+   private CrowdSystem crowdSystem;
+
+   private void Awake() {
+      crowdSystem = FindAnyObjectByType<CrowdSystem>();
+   }
+
    private void Update() {
       DetectGreens();
    }

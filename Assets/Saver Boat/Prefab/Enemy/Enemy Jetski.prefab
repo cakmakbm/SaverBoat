@@ -50,6 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bonusType: 1
   bonusAmount: 2
+  searchRadius: 5
+  moveSpeed: 5
 --- !u!65 &1895194578654090298
 BoxCollider:
   m_ObjectHideFlags: 0

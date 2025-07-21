@@ -40,7 +40,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2911869908887805141}
-  - component: {fileID: 7950317041348471078}
+  - component: {fileID: 8504944600851467413}
+  - component: {fileID: 5364632547006768370}
+  - component: {fileID: 5376229634008833243}
   m_Layer: 0
   m_Name: SitckmanGroup
   m_TagString: StickmanGroup
@@ -65,7 +67,7 @@ Transform:
   - {fileID: 3851888957010645157}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7950317041348471078
+--- !u!114 &8504944600851467413
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,7 +76,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 724912832457049611}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8450e991c1df6c24ca720f6d909484f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b8ca7dfbea6fa448bc7b9430297ad64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &5364632547006768370
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724912832457049611}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.19, y: 5.16, z: 5.21}
+  m_Center: {x: -0.03, y: 0, z: -0.14}
+--- !u!114 &5376229634008833243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724912832457049611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99efb5200f77a141a89840396d5e245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &4765021846392928758
@@ -85,6 +120,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2911869908887805141}
     m_Modifications:
+    - target: {fileID: 78567120520269768, guid: acb37c50458491d46a3dfae5035c707a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4407372427381825610, guid: acb37c50458491d46a3dfae5035c707a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4848798798763093248, guid: acb37c50458491d46a3dfae5035c707a,
         type: 3}
       propertyPath: m_Name
