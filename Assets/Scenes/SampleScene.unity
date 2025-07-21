@@ -811,7 +811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelChunks:
-  - {fileID: 6042189115901446413, guid: 6e99aab17990bba4ab6e1892ca2f2331, type: 3}
+  - {fileID: 1400370510647946774, guid: 10b44b19100b19343a683f6b4652b710, type: 3}
   - {fileID: 6042189115901446413, guid: 6e99aab17990bba4ab6e1892ca2f2331, type: 3}
   - {fileID: 6042189115901446413, guid: 6e99aab17990bba4ab6e1892ca2f2331, type: 3}
   - {fileID: 6042189115901446413, guid: 6e99aab17990bba4ab6e1892ca2f2331, type: 3}
@@ -1006,6 +1006,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7339858243265743855, guid: 24242fc07d90b8a49a55ed24eb0e3c12,
+        type: 3}
+      propertyPath: crowdSystem
+      value: 
+      objectReference: {fileID: 1356543564}
     m_RemovedComponents:
     - {fileID: 2131416262356858399, guid: 24242fc07d90b8a49a55ed24eb0e3c12, type: 3}
     m_RemovedGameObjects: []

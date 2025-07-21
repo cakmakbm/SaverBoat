@@ -12,8 +12,8 @@ public class CrowdSystem : MonoBehaviour {
    [SerializeField] private GameObject stickmanGroupPrefab;
    
    private void Update() {
-
       PlaceOnBoats();
+      
 
 
    }
@@ -109,7 +109,9 @@ public class CrowdSystem : MonoBehaviour {
    private void AddRunners(int amount) {
       for (int i = 0; i < amount; i++) {
          Instantiate(stickmanPrefab, GetStickManGroupTransform().GetChild(0));
+        
       }
+   
       
    }
   
@@ -126,13 +128,55 @@ public class CrowdSystem : MonoBehaviour {
       }
       
    }
-
-   private void RemoveRunners(int bonusAmount) {
-      int amountOnGame = GetTotalStickmanCount();
-      if (bonusAmount>amountOnGame) {
-         bonusAmount = amountOnGame;
+   
+   public void RemoveRunners(int amountToRemove)
+   {
+      int totalStickmen = GetTotalStickmanCount();
+      if (amountToRemove > totalStickmen)
+      {
+         amountToRemove = totalStickmen;
       }
-      
+
+     
+      for (int i = 0; i < amountToRemove; i++)
+      {
+         
+         if (boatParenTransform.childCount == 0)
+         {
+            break;
+         }
+
+         Transform lastStickmanGroup = boatParenTransform.GetChild(boatParenTransform.childCount - 1);
+         Transform stickmanParent = lastStickmanGroup.GetChild(0);
+
+        
+
+        
+         Transform stickmanToDestroy = stickmanParent.GetChild(stickmanParent.childCount - 1);
+         stickmanToDestroy.SetParent(null);
+         Destroy(stickmanToDestroy.gameObject);
+         
+         if (stickmanParent.childCount == 0)
+         {
+            lastStickmanGroup.SetParent(null);
+            Destroy(lastStickmanGroup.gameObject);
+            
+            
+           
+            
+            
+       
+         }
+      }
+   }
+   
+
+   private void DestroyLastStickmanGroup() {
+
+      Transform destroyGroup = GetStickManGroupTransform();
+      destroyGroup.SetParent(null);
+      Destroy(destroyGroup.gameObject);
+
    }
 
    private int GetTotalStickmanCount() {

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6301722116528212967}
   - component: {fileID: 5867347933213468147}
+  - component: {fileID: 4368800429056674185}
   m_Layer: 0
   m_Name: Enemy Speed Boat
   m_TagString: Untagged
@@ -52,6 +53,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bonusType: 1
   bonusAmount: 5
+--- !u!65 &4368800429056674185
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2601839420900587600}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.28, y: 1, z: 9.17}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &826165896477789513
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78,7 +100,7 @@ PrefabInstance:
     - target: {fileID: 8570613672435159821, guid: d481f5b5d960cba4ebe31efb026d40a7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.882
+      value: 2.206
       objectReference: {fileID: 0}
     - target: {fileID: 8570613672435159821, guid: d481f5b5d960cba4ebe31efb026d40a7,
         type: 3}
@@ -152,7 +174,7 @@ PrefabInstance:
     - target: {fileID: 8570613672435159821, guid: d481f5b5d960cba4ebe31efb026d40a7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.069
+      value: 2.346
       objectReference: {fileID: 0}
     - target: {fileID: 8570613672435159821, guid: d481f5b5d960cba4ebe31efb026d40a7,
         type: 3}
@@ -231,7 +253,7 @@ PrefabInstance:
     - target: {fileID: 8570613672435159821, guid: d481f5b5d960cba4ebe31efb026d40a7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.936
+      value: 0.497
       objectReference: {fileID: 0}
     - target: {fileID: 8570613672435159821, guid: d481f5b5d960cba4ebe31efb026d40a7,
         type: 3}
@@ -300,7 +322,7 @@ PrefabInstance:
     - target: {fileID: 8570613672435159821, guid: d481f5b5d960cba4ebe31efb026d40a7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.612
+      value: -0.462
       objectReference: {fileID: 0}
     - target: {fileID: 8570613672435159821, guid: d481f5b5d960cba4ebe31efb026d40a7,
         type: 3}
@@ -310,7 +332,7 @@ PrefabInstance:
     - target: {fileID: 8570613672435159821, guid: d481f5b5d960cba4ebe31efb026d40a7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.936
+      value: 1.14
       objectReference: {fileID: 0}
     - target: {fileID: 8570613672435159821, guid: d481f5b5d960cba4ebe31efb026d40a7,
         type: 3}
@@ -468,7 +490,7 @@ PrefabInstance:
     - target: {fileID: 8570613672435159821, guid: d481f5b5d960cba4ebe31efb026d40a7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.137
+      value: 3.487
       objectReference: {fileID: 0}
     - target: {fileID: 8570613672435159821, guid: d481f5b5d960cba4ebe31efb026d40a7,
         type: 3}

@@ -31,6 +31,7 @@ public class PlayerDetection : MonoBehaviour {
             BonusType bonusType = enemy.GetBonusType();
             crowdSystem.AppylyBonus(bonusType, bonusAmount);
             Destroy(enemy.gameObject);
+            Debug.Log("Enemy karsilastild");
          }
          
       }
