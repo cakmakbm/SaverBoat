@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 public enum BonusType {
     Addition, 
-    Difference
+    Difference,
+    Product,
+    Division,
+    Speed
 };
 public class Greens : MonoBehaviour {
     [SerializeField] private int bonusAmount;

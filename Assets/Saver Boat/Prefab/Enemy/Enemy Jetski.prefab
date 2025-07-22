@@ -31,9 +31,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5502562951665289969}
   - {fileID: 9045425119421488708}
   - {fileID: 7460057085530117106}
+  - {fileID: 5502562951665289969}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6722233257285149262
@@ -52,6 +52,7 @@ MonoBehaviour:
   bonusAmount: 2
   searchRadius: 5
   moveSpeed: 5
+  rotationSpeed: 0
 --- !u!65 &1895194578654090298
 BoxCollider:
   m_ObjectHideFlags: 0

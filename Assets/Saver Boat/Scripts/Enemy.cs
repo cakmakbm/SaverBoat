@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour {
     [SerializeField] private float searchRadius;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float rotationSpeed;
+    private EnemyAnimationHandler[] animationHandler;
+    
     
     private State state;
     private Transform targetGroup;
@@ -18,8 +20,15 @@ public class Enemy : MonoBehaviour {
 
     enum State {
         Idle,
-        Running
+        Running,
+        Death
         
+        
+    }
+
+    private void Awake() {
+       
+       // animationHandler = GetComponentInChildren<EnemyAnimationHandler>();
         
     }
 
@@ -35,8 +44,57 @@ public class Enemy : MonoBehaviour {
             case State.Running:
                 RunTowardsTarget();
                 break;
+            case State.Death:
+                moveSpeed = 0;
+                rotationSpeed = 0;
+                break;
             
         }
+    }
+
+
+    public void InitiateDeath() {
+        state = State.Death;
+        Collider[] colliders = GetComponentsInChildren<Collider>();
+        foreach (Collider col in colliders)
+        {
+            col.enabled = false;
+        }
+        EnemyAnimationHandler[] handlers = GetComponentsInChildren<EnemyAnimationHandler>();
+
+        // 3. Dizideki her bir handler için döngü kur ve animasyonu başlat.
+        foreach (EnemyAnimationHandler handler in handlers)
+        {
+            handler.StartDeathAnimation();
+        }
+
+        // 4. Boş tekneyi belirli bir süre sonra yok etmek için Coroutine başlat.
+        // Buradaki 3.0f, animasyonun bitmesi için gereken süredir. Kendi animasyonunuza göre ayarlayın.
+        StartCoroutine(DestroySelfAfterDelay(2.0f));
+
+       
+
+       /* if (animationHandler!=null) {
+            
+            animationHandler.StartDeathAnimation();
+            
+        }
+
+        else {
+            
+            
+            Destroy(gameObject);
+            
+        }*/
+        
+    }
+    private IEnumerator DestroySelfAfterDelay(float delay)
+    {
+        // Belirtilen süre kadar bekle.
+        yield return new WaitForSeconds(delay);
+        
+        // Bekleme bittikten sonra tekne objesini yok et.
+        Destroy(gameObject);
     }
 
   
@@ -57,7 +115,7 @@ public class Enemy : MonoBehaviour {
         directionToTarget.y = 0; 
 
         // 2. Adım: O yöne bakması gereken ideal rotasyonu hesapla.
-        Quaternion targetRotation = Quaternion.LookRotation(directionToTarget);
+        Quaternion targetRotation = Quaternion.LookRotation(-directionToTarget);
 
         // 3. Adım: Mevcut rotasyondan hedef rotasyona doğru yumuşakça (Slerp) geçiş yap.
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);

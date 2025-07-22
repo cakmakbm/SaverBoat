@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -61,7 +62,7 @@ public class BoatController : MonoBehaviour {
 
       }
 
-      transform.position += clickedPlayerPosition * slideSpeed * Time.deltaTime;
+      transform.position += clickedPlayerPosition * movementSpeed * Time.deltaTime;
 
     }
 
@@ -69,9 +70,29 @@ public class BoatController : MonoBehaviour {
 
       transform.rotation = originalRotation;
     }*/
-    
    
-    
-    
   }
+  public float GetMovementSpeed() {
+
+    return movementSpeed;
+  }
+  /*public float GetSlideSpeed() {
+
+    return slideSpeed;
+  }*/
+
+  public void SetMovementSpeed(float newSpeed) {
+
+    movementSpeed = newSpeed;
+
+
+  }
+  
+ /* public void SetSlideSpeed(float newSpeed) {
+
+    slideSpeed = newSpeed;
+
+
+  }*/
+  
 }

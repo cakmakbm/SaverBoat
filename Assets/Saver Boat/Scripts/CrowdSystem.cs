@@ -153,9 +153,19 @@ public class CrowdSystem : MonoBehaviour {
 
         
          Transform stickmanToDestroy = stickmanParent.GetChild(stickmanParent.childCount - 1);
-         stickmanToDestroy.SetParent(null);
-         Destroy(stickmanToDestroy.gameObject);
-         
+         CharAnimationHandler charAnimationHandler = stickmanToDestroy.GetComponent<CharAnimationHandler>();
+         if (charAnimationHandler != null) {
+
+
+            stickmanToDestroy.SetParent(null);
+
+            charAnimationHandler.StartDeathAnimation();
+            
+         }
+         else {
+            Destroy(stickmanToDestroy.gameObject);
+         }
+
          if (stickmanParent.childCount == 0)
          {
             lastStickmanGroup.SetParent(null);
