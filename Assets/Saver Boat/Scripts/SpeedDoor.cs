@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpeedDoor : MonoBehaviour {
+public class SpeedDoor : BaseDoor {
    [Header(" Settings ")] 
    [SerializeField] private BonusType bonusType;
    [SerializeField] private float newSpeed;
@@ -17,4 +17,6 @@ public class SpeedDoor : MonoBehaviour {
       return bonusType;
 
    }
+
+ 
 }

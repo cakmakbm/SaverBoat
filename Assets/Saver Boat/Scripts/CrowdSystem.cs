@@ -12,7 +12,20 @@ public class CrowdSystem : MonoBehaviour {
    [SerializeField] private GameObject stickmanGroupPrefab;
    
    private void Update() {
+      
+      if (!GameManager.instance.IsGameState()) {
+         
+         return;
+         
+      }
       PlaceOnBoats();
+
+      if (GetTotalStickmanCount()<=0) {
+         
+         GameManager.instance.SetGameState(GameManager.GameState.GameOver);
+         
+         
+      }
       
 
 
@@ -116,14 +129,23 @@ public class CrowdSystem : MonoBehaviour {
    }
   
 
-   public void AppylyBonus(BonusType bonusType, int bonusAmount) {
-
+   public void ApplyBonus(BonusType bonusType, int bonusAmount) {
+      int total = GetTotalStickmanCount();
       switch (bonusType) {
          case BonusType.Addition:
             AddRunners(bonusAmount);
             break;
          case BonusType.Difference:
             RemoveRunners(bonusAmount);
+            break;
+         case BonusType.Product:
+            
+            int stickmanToAdd = total * bonusAmount - total;
+            AddRunners(stickmanToAdd);
+            break;
+         case BonusType.Division:
+            int stickManToRemove = total - (total / bonusAmount);
+            RemoveRunners(stickManToRemove);
             break;
       }
       
@@ -189,7 +211,7 @@ public class CrowdSystem : MonoBehaviour {
 
    }
 
-   private int GetTotalStickmanCount() {
+   public int GetTotalStickmanCount() {
       int total = 0;
       for (int i = 0; i < boatParenTransform.childCount; i++) {
          for (int j = 0; j <boatParenTransform.GetChild(i).GetChild(0).childCount ; j++) {

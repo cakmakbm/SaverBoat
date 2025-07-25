@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4368800429056674185}
   m_Layer: 0
   m_Name: Enemy Speed Boat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,6 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37d037900d40bd143b43babe0e4c84c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathEffectPrefab: {fileID: 3865380762648477269, guid: 5b3bf30e673a83d46966e9fbdcae50f7,
+    type: 3}
   bonusType: 1
   bonusAmount: 5
   searchRadius: 0

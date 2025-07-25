@@ -5,6 +5,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
+    [Header(" Effects ")] 
+    [SerializeField] private GameObject deathEffectPrefab;
     [Header(" Settings ")]
     [SerializeField] private BonusType bonusType;
     [SerializeField] private int bonusAmount;
@@ -36,6 +38,8 @@ public class Enemy : MonoBehaviour {
         ManageState();
     }
 
+   
+
     private void ManageState() {
         switch (state) {
             case State.Idle:
@@ -53,9 +57,13 @@ public class Enemy : MonoBehaviour {
     }
 
 
-    public void InitiateDeath() {
+    public void InitiateDeath(Vector3 effectPosition) {
         state = State.Death;
         Collider[] colliders = GetComponentsInChildren<Collider>();
+        if (deathEffectPrefab != null)
+        {
+            Instantiate(deathEffectPrefab, effectPosition, Quaternion.identity);
+        }
         foreach (Collider col in colliders)
         {
             col.enabled = false;

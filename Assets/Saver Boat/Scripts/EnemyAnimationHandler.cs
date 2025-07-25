@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class EnemyAnimationHandler : MonoBehaviour
 {
     private Animator animator;
     private Collider collider;
+    
 
     private void Awake() {
       
@@ -14,6 +16,8 @@ public class EnemyAnimationHandler : MonoBehaviour
     }
 
     public void StartDeathAnimation() {
+        
+        
 
         if (animator != null) {
          

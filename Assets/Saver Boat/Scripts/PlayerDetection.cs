@@ -2,22 +2,36 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class PlayerDetection : MonoBehaviour { 
+public class PlayerDetection : MonoBehaviour {
+   [Header(" Events ")] 
+   public static Action onDoorsHit;
+
+   public static Action onRunnerDied;
+   
    private CrowdSystem crowdSystem;
    private BoatController boatController;
    private bool isSpeedBoostActive;
    private float speedBoostEndTime;
    private float originalSpeed;
+   private Collider selfCollider;
+   private UIManager uiManager;
    
 
    private void Awake() {
+      uiManager = GetComponent<UIManager>();
+      selfCollider = GetComponent<Collider>();
       crowdSystem = FindAnyObjectByType<CrowdSystem>();
       boatController = FindAnyObjectByType<BoatController>();
    }
 
    private void Update() {
-      DetectGreens();
+      if (GameManager.instance.IsGameState()) {
+         
+         DetectGreens();
+      }
+   
       // Hız artışı aktif mi diye kontrol et
       if (isSpeedBoostActive)
       {
@@ -41,8 +55,9 @@ public class PlayerDetection : MonoBehaviour {
          if (detectColliders[i].TryGetComponent(out Greens greens)) {
             int bonusAmount = greens.GetBonusAmount();
             BonusType bonusType = greens.GetBonusType();
-               crowdSystem.AppylyBonus(bonusType, bonusAmount);
+               crowdSystem.ApplyBonus(bonusType, bonusAmount);
                Debug.Log("Detected");
+               onDoorsHit?.Invoke();
                Destroy(greens.gameObject);
 
 
@@ -52,10 +67,23 @@ public class PlayerDetection : MonoBehaviour {
             
             int bonusAmount = enemy.GetBonusAmount();
             BonusType bonusType = enemy.GetBonusType();
-            crowdSystem.AppylyBonus(bonusType, bonusAmount);
+            crowdSystem.ApplyBonus(bonusType, bonusAmount);
            // CharAnimationHandler handler = enemy.GetComponent<CharAnimationHandler>();
-            
-           enemy.InitiateDeath();
+           Collider enemyCollider = enemy.GetComponent<Collider>();
+           Vector3 effectPosition;
+           if (selfCollider != null && enemyCollider != null)
+           {
+              // Kendi collider'ımızın, düşmanın pozisyonuna en yakın noktasını buluyoruz.
+              // Bu, oldukça doğru bir temas noktası tahmini verir.
+              effectPosition = selfCollider.ClosestPoint(enemy.transform.position);
+           }
+           else
+           {
+              // Eğer bir sebepten collider'lar bulunamazsa, düşmanın merkezini kullan.
+              effectPosition = enemy.transform.position;
+           }
+           onRunnerDied?.Invoke();
+           enemy.InitiateDeath(effectPosition);
            
            // Destroy(enemy.gameObject);
            // Debug.Log("Enemy karsilastild");
@@ -83,11 +111,39 @@ public class PlayerDetection : MonoBehaviour {
             speedBoostEndTime = Time.time + boostDuration;
     
             Debug.Log("Hız artışı (yenilendi)! Yeni bitiş zamanı: " + speedBoostEndTime);
+            onDoorsHit?.Invoke();
 
             Destroy(speedDoor.gameObject);
 
 
             }
+
+         if (detectColliders[i].TryGetComponent(out Door door)) {
+            int bonusAmount = door.GetBonusAmount(transform.position.x);
+            BonusType bonusType = door.GetBonusType(transform.position.x);
+            door.Disable();
+            crowdSystem.ApplyBonus(bonusType, bonusAmount);
+            onDoorsHit?.Invoke();
+            Destroy(door.gameObject);
+            
+         }
+
+         if (detectColliders[i].CompareTag("Finish")) {
+            
+            
+            
+           
+            
+
+
+               PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") + 1);
+               GameManager.instance.SetGameState(GameManager.GameState.LevelComplete);
+               // SceneManager.LoadScene(0);
+            
+
+         }
+         
+         
          
          
          

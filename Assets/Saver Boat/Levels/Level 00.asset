@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d82fbc3d505f0d544b6625eaa99579a5, type: 3}
+  m_Name: Level 00
+  m_EditorClassIdentifier: 
+  chunks:
+  - {fileID: 6042189115901446413, guid: f6879f14c19297b4baa64b93c73092e7, type: 3}
+  - {fileID: 8239476655346845447, guid: 11de5ac9aaf85e545ad3c448adbbd8b4, type: 3}
+  - {fileID: 6042189115901446413, guid: 6df1af9bbc58d5a419cfb37cafc454c7, type: 3}
+  - {fileID: 6042189115901446413, guid: 6df1af9bbc58d5a419cfb37cafc454c7, type: 3}
+  - {fileID: 6042189115901446413, guid: 6df1af9bbc58d5a419cfb37cafc454c7, type: 3}
+  - {fileID: 6042189115901446413, guid: 6e99aab17990bba4ab6e1892ca2f2331, type: 3}
+  - {fileID: 8239476655346845447, guid: 738c12cc8ac678f4298c6f89d242a5dc, type: 3}
+  - {fileID: 8239476655346845447, guid: 738c12cc8ac678f4298c6f89d242a5dc, type: 3}
+  needStickmanNumber: 2

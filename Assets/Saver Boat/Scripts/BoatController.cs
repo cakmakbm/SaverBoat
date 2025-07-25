@@ -6,20 +6,78 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class BoatController : MonoBehaviour {
+  public static BoatController instance;
+  
   [Header(" Settings ")] 
   [SerializeField] private float movementSpeed;
   [SerializeField] private float slideSpeed;
+  [SerializeField] private float roadWith;
+  private bool canMove;
   
- 
+  
+  
   private Vector3 clickedScreenPosition;
   private Vector3 clickedPlayerPosition;
   private Quaternion originalRotation;
   private Quaternion targetRotation;
-  
-  
+
+
+  private void Awake() {
+    if (instance!= null) {
+      Destroy(gameObject);
+      
+    }
+    else {
+      instance = this;
+    }
+  }
+
+  private void Start() {
+    
+    GameManager.onGameStateChanged += GameStateChangedCallBack;
+  }
+
+  private void OnDestroy() {
+    GameManager.onGameStateChanged -= GameStateChangedCallBack;
+  }
+
+
   private void Update() {
-    MoveForward();
-    moveWithInput();
+    if (canMove) {
+
+      MoveForward();
+      moveWithInput();
+      
+    }
+  }
+  
+  private void GameStateChangedCallBack(GameManager.GameState gameState) {
+
+    if (gameState== GameManager.GameState.Game) {
+      StartMoving();
+      
+    }
+    else if (gameState== GameManager.GameState.GameOver) {
+      
+      StopMoving();
+      
+    }
+    else if ( gameState==GameManager.GameState.LevelComplete) {
+      
+      StopMoving();
+      
+    }
+    
+  }
+
+  private void StartMoving() {
+
+    canMove = true;
+  }
+
+  private void StopMoving() {
+
+    canMove = false;
   }
 
   private void MoveForward() {
@@ -37,49 +95,31 @@ public class BoatController : MonoBehaviour {
       
       
       
-     /* if (clickedScreenPosition.x < Screen.width / 2 ) {
-        
-        transform.Rotate(0,0,-25);
-      }
-      else if(clickedScreenPosition.x > Screen.width / 2 ){
-        
-        transform.Rotate(0, 0, 25);
-        
-      }*/
-      
     }
-    else if(Input.GetMouseButton(0)){
+    else if(Input.GetMouseButton(0)) {
+      float xScreenDifference = Input.mousePosition.x - clickedScreenPosition.x;
+      xScreenDifference /= Screen.width;
+      xScreenDifference *= slideSpeed;
+      Vector3 position = transform.position;
+      position.x = clickedPlayerPosition.x + xScreenDifference;
+      position.x = Mathf.Clamp(position.x, -roadWith / 2 + 1.1f, roadWith / 2 - 1.1f);
 
-    if (clickedScreenPosition.x < Screen.width / 2 ) {
-      
-      clickedPlayerPosition = (Vector3.right + Vector3.forward).normalized;
-        
-      }
-      else if(clickedScreenPosition.x > Screen.width / 2 ){
-        
-        clickedPlayerPosition = (Vector3.forward + Vector3.left).normalized;
-        
+      transform.position = position;
 
-      }
 
-      transform.position += clickedPlayerPosition * movementSpeed * Time.deltaTime;
+
+
 
     }
 
-   /* if (Input.GetMouseButtonUp(0)) {
-
-      transform.rotation = originalRotation;
-    }*/
+  
    
   }
   public float GetMovementSpeed() {
 
     return movementSpeed;
   }
-  /*public float GetSlideSpeed() {
-
-    return slideSpeed;
-  }*/
+  
 
   public void SetMovementSpeed(float newSpeed) {
 
@@ -88,11 +128,6 @@ public class BoatController : MonoBehaviour {
 
   }
   
- /* public void SetSlideSpeed(float newSpeed) {
-
-    slideSpeed = newSpeed;
-
-
-  }*/
+ 
   
 }
