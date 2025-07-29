@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: Level 01
   m_EditorClassIdentifier: 
   chunks:
-  - {fileID: 3474986556010978022, guid: 406158d760fee204bb971810aab8f883, type: 3}
-  - {fileID: 8239476655346845447, guid: 11de5ac9aaf85e545ad3c448adbbd8b4, type: 3}
-  - {fileID: 6042189115901446413, guid: f6879f14c19297b4baa64b93c73092e7, type: 3}
+  - {fileID: 1400370510647946774, guid: 8763b36ce18249c48962a8f5fc2db2b1, type: 3}
+  - {fileID: 1400370510647946774, guid: 65d4d25c1e03132409d3149774f9db3e, type: 3}
+  - {fileID: 1400370510647946774, guid: 78462a8939af14a41a4ca3feb990456a, type: 3}
+  - {fileID: 1400370510647946774, guid: a9c7a578f43b32344a538674acc014e9, type: 3}
+  - {fileID: 1400370510647946774, guid: a4cff06bdca9e7a499a070365c3f30ee, type: 3}
+  - {fileID: 1400370510647946774, guid: 65d4d25c1e03132409d3149774f9db3e, type: 3}
+  - {fileID: 1400370510647946774, guid: 78462a8939af14a41a4ca3feb990456a, type: 3}
   - {fileID: 8239476655346845447, guid: 738c12cc8ac678f4298c6f89d242a5dc, type: 3}
   needStickmanNumber: 6

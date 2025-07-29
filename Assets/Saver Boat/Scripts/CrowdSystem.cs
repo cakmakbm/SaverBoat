@@ -81,7 +81,7 @@ public class CrowdSystem : MonoBehaviour {
       }
 
      
-      float x = (index % 2 != 0) ? -1.1f : 1.1f;
+      float x = (index % 2 != 0) ? -1.5f : 1.5f;
 
      
       int rowIndex = ((index - 1) / 2) + 1;

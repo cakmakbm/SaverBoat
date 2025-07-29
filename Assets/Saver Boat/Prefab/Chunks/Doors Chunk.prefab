@@ -208,8 +208,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5758751776105081425, guid: 1e65c6b609b6b4640a932815d135f027,
         type: 3}
-      propertyPath: leftDoorBonusAmount
+      propertyPath: rightDoorBonusType
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758751776105081425, guid: 1e65c6b609b6b4640a932815d135f027,
+        type: 3}
+      propertyPath: leftDoorBonusAmount
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5758751776105081425, guid: 1e65c6b609b6b4640a932815d135f027,
         type: 3}

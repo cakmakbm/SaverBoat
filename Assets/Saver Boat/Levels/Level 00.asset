@@ -13,12 +13,9 @@ MonoBehaviour:
   m_Name: Level 00
   m_EditorClassIdentifier: 
   chunks:
-  - {fileID: 6042189115901446413, guid: f6879f14c19297b4baa64b93c73092e7, type: 3}
-  - {fileID: 8239476655346845447, guid: 11de5ac9aaf85e545ad3c448adbbd8b4, type: 3}
-  - {fileID: 6042189115901446413, guid: 6df1af9bbc58d5a419cfb37cafc454c7, type: 3}
-  - {fileID: 6042189115901446413, guid: 6df1af9bbc58d5a419cfb37cafc454c7, type: 3}
-  - {fileID: 6042189115901446413, guid: 6df1af9bbc58d5a419cfb37cafc454c7, type: 3}
-  - {fileID: 6042189115901446413, guid: 6e99aab17990bba4ab6e1892ca2f2331, type: 3}
+  - {fileID: 1400370510647946774, guid: 8763b36ce18249c48962a8f5fc2db2b1, type: 3}
+  - {fileID: 1400370510647946774, guid: 10b44b19100b19343a683f6b4652b710, type: 3}
+  - {fileID: 1400370510647946774, guid: 42b7e3c9f55c10044ad04cc889596a25, type: 3}
+  - {fileID: 1400370510647946774, guid: a9c7a578f43b32344a538674acc014e9, type: 3}
   - {fileID: 8239476655346845447, guid: 738c12cc8ac678f4298c6f89d242a5dc, type: 3}
-  - {fileID: 8239476655346845447, guid: 738c12cc8ac678f4298c6f89d242a5dc, type: 3}
-  needStickmanNumber: 2
+  needStickmanNumber: 3

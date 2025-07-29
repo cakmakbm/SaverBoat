@@ -22,6 +22,7 @@ public class ChunkManager : MonoBehaviour {
       instance = this;
 
     }
+    
   }
 
   private void Start() {

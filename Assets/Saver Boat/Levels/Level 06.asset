@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d82fbc3d505f0d544b6625eaa99579a5, type: 3}
+  m_Name: Level 06
+  m_EditorClassIdentifier: 
+  chunks:
+  - {fileID: 1400370510647946774, guid: 8763b36ce18249c48962a8f5fc2db2b1, type: 3}
+  - {fileID: 1400370510647946774, guid: 10b44b19100b19343a683f6b4652b710, type: 3}
+  - {fileID: 8239476655346845447, guid: 11de5ac9aaf85e545ad3c448adbbd8b4, type: 3}
+  - {fileID: 1400370510647946774, guid: 78462a8939af14a41a4ca3feb990456a, type: 3}
+  - {fileID: 1400370510647946774, guid: 42b7e3c9f55c10044ad04cc889596a25, type: 3}
+  - {fileID: 8239476655346845447, guid: 11de5ac9aaf85e545ad3c448adbbd8b4, type: 3}
+  - {fileID: 3474986556010978022, guid: 873ee7b0eb0e5dc4cb4184a436fdc717, type: 3}
+  - {fileID: 3474986556010978022, guid: a44315cf15d537d429dfdd10f1a1a168, type: 3}
+  - {fileID: 1400370510647946774, guid: 42b7e3c9f55c10044ad04cc889596a25, type: 3}
+  - {fileID: 3474986556010978022, guid: 873ee7b0eb0e5dc4cb4184a436fdc717, type: 3}
+  - {fileID: 8239476655346845447, guid: 11de5ac9aaf85e545ad3c448adbbd8b4, type: 3}
+  - {fileID: 3474986556010978022, guid: 9d606d1074c6bf64c9bdb3afe8351f7f, type: 3}
+  - {fileID: 8239476655346845447, guid: 11de5ac9aaf85e545ad3c448adbbd8b4, type: 3}
+  - {fileID: 1400370510647946774, guid: 42b7e3c9f55c10044ad04cc889596a25, type: 3}
+  - {fileID: 1400370510647946774, guid: 42b7e3c9f55c10044ad04cc889596a25, type: 3}
+  - {fileID: 1400370510647946774, guid: 65d4d25c1e03132409d3149774f9db3e, type: 3}
+  - {fileID: 8239476655346845447, guid: 11de5ac9aaf85e545ad3c448adbbd8b4, type: 3}
+  - {fileID: 1400370510647946774, guid: 0dde4240bb3bb594b8aacc1c53e6e6a1, type: 3}
+  - {fileID: 8239476655346845447, guid: 738c12cc8ac678f4298c6f89d242a5dc, type: 3}
+  needStickmanNumber: 10

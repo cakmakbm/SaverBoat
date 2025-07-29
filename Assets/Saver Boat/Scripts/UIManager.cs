@@ -22,6 +22,9 @@ public class UIManager : MonoBehaviour {
    [SerializeField] private TextMeshProUGUI levelText;
    [SerializeField] private TextMeshProUGUI playText;
    [SerializeField] private TextMeshProUGUI stickmanText;
+   [SerializeField] private TextMeshProUGUI menuLevelText;
+   [SerializeField] private TextMeshProUGUI lastLevelText;
+   [SerializeField] private TextMeshProUGUI nextLevelText;
    [SerializeField] private ChunkManager chunkManager;
    [SerializeField] private CrowdSystem crowdSystem;
    private int needStickman;
@@ -37,6 +40,9 @@ public class UIManager : MonoBehaviour {
    }
 
    private void Start() {
+      menuLevelText.text = "Level " + (ChunkManager.instance.GetLevel()+1);
+      lastLevelText.text = "Level " + (ChunkManager.instance.GetLevel());
+      nextLevelText.text = "Level " + (ChunkManager.instance.GetLevel()+2);
       needStickman = chunkManager.GetCount();
       
       
@@ -45,11 +51,8 @@ public class UIManager : MonoBehaviour {
       gameOverPanel.SetActive(false);
       settingsPanel.SetActive(false);
       levelText.text = "Level " + (ChunkManager.instance.GetLevel()+1);
-      if (ChunkManager.instance.GetLevel()== 1) {
-         playText.text = "Play ";
-
-      }
-      playText.text = "Level " + (ChunkManager.instance.GetLevel()+1);
+      
+      
 
       GameManager.onGameStateChanged += GameStateChangedCallback;
 
@@ -128,6 +131,7 @@ public class UIManager : MonoBehaviour {
 
    public void UptadeStickanText() {
       if (GameManager.instance.IsGameState()) {
+         stickmanNumber = crowdSystem.GetTotalStickmanCount();
 
          
 
@@ -135,7 +139,7 @@ public class UIManager : MonoBehaviour {
 
          if (stickmanNumber>needStickman) {
             stickmanNumber = needStickman;
-           // stickmanText.color = Color.green;
+            stickmanText.color = Color.green;
 
          }
          

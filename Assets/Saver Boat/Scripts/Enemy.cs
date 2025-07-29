@@ -3,17 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour {
     [Header(" Effects ")] 
     [SerializeField] private GameObject deathEffectPrefab;
-    [Header(" Settings ")]
+
+    [Header(" Settings ")] 
+    [SerializeField] private int maxHealth = 100;
     [SerializeField] private BonusType bonusType;
     [SerializeField] private int bonusAmount;
     [SerializeField] private float searchRadius;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float rotationSpeed;
+    [SerializeField] private Slider healthBarSlider;
     private EnemyAnimationHandler[] animationHandler;
+    private int currentHealth;
     
     
     private State state;
@@ -34,10 +39,29 @@ public class Enemy : MonoBehaviour {
         
     }
 
+    private void Start() {
+        currentHealth = maxHealth;
+        healthBarSlider.maxValue = maxHealth;
+        healthBarSlider.value = currentHealth;
+    }
+
     private void Update() {
         ManageState();
     }
 
+    public void TakeDamage(int damage) {
+
+        currentHealth -= damage;
+        healthBarSlider.value = currentHealth;
+        
+
+        if (currentHealth<=0) {
+            
+            InitiateDeath(transform.position);
+            
+        }
+    }
+    
    
 
     private void ManageState() {
@@ -78,7 +102,7 @@ public class Enemy : MonoBehaviour {
 
         // 4. Boş tekneyi belirli bir süre sonra yok etmek için Coroutine başlat.
         // Buradaki 3.0f, animasyonun bitmesi için gereken süredir. Kendi animasyonunuza göre ayarlayın.
-        StartCoroutine(DestroySelfAfterDelay(2.0f));
+        StartCoroutine(DestroySelfAfterDelay(1.2f));
 
        
 
