@@ -19,7 +19,6 @@
 * **Target:** Mobile (touch/drag) + Editor testing
 * **Why:** Practice mobile‑first controls, object interactions, simple AI/combat, settings, and pooling.
 
-> Check the exact Unity version in `ProjectSettings/ProjectVersion.txt`.
 
 ---
 
