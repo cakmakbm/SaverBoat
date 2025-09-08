@@ -2,13 +2,7 @@
 
 > A from‑scratch mobile prototype: steer a small boat, **rescue passengers**, and **fight enemy boats**. Features a pooled projectile system, simple enemy AI with **search radius + chase**, and togglable **sound & haptics**. Built to practice Unity/C# gameplay loops, input, and lightweight feel tuning.
 
-## Screenshots
 
-![Gameplay 1](rescue1.png)
-![Gameplay 2](rescue2.png)
-![Gameplay 1](rescue3.png)
-![Gameplay 2](rescue4.png)
-![Gameplay 2](rescue5.png)
 ---
 
 ## Overview
@@ -100,7 +94,11 @@
 ## Screenshots 
 
 
-
+![Gameplay 1](rescue1.png)
+![Gameplay 2](rescue2.png)
+![Gameplay 1](rescue3.png)
+![Gameplay 2](rescue4.png)
+![Gameplay 2](rescue5.png)
 
 
 
